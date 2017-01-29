@@ -1,0 +1,39 @@
+% layout "default";
+% title "$config->{board}->{title} :: $board_data->{title}";
+
+% use Yoba;
+
+<div class="header">
+   %= include "pages/include/boards_list"
+   %= include "pages/include/header-links"
+</div>
+<div class="clr"></div>
+
+%= include "pages/include/board-logo"
+
+<hr>
+
+%= include "pages/include/toboard"
+%= include "pages/include/tocatalog"
+% if($custom) {
+   &#91;<span class="custom-boards-links"><a href="/custom/login?board=<%= $board %>">Управление</a></span>&#93;
+% }
+
+%= include "pages/include/replyform"
+<hr>
+
+<div class="thread">
+   %= include "pages/include/oppost"
+
+   % while(my $post_data = $posts_cursor->next) {
+      %= include "pages/include/post", post_data => $post_data
+   % }
+
+   <div class="clr"></div>
+
+   <div class="thread-return">&#91;<a href="/<%= $board %>">Назад</a>&#93;</div>
+</div>
+
+
+
+%#= include "pages/include/engine-link"

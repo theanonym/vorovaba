@@ -1,0 +1,21 @@
+<div class="page-numbers">
+   % if($page > 1) {
+      <a href="/<%= $board %>/<%= $page - 1 %>">Назад</a>
+   % } else {
+      Назад
+   % }
+
+   % for my $p (1 .. $pages_count) {
+      % if($p != $page) {
+         &#91;<a href="/<%= $board %>/<%= $p %>"><%= $p %></a>&#93;
+      % } else {
+         &#91;<%= $p %>&#93;
+      % }
+   % }
+
+   % if($page < $pages_count) {
+      <a href="/<%= $board %>/<%= $page + 1 %>">Вперёд</a>
+   % } else {
+      Вперёд
+   % }
+</div>

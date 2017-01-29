@@ -1,0 +1,29 @@
+% layout "default";
+% title "$config->{board}->{title} :: Поиск";
+
+<table>
+   <tr>
+      %= include "pages/include/adminbar"
+      %= include "pages/include/boardlist"
+      <br>
+      <table style="width:100%">
+         <tr>
+            <td valign="center">
+               <span class="board-logo">Результаты поиска по запросу "<%= $query %>"</span>
+            </td>
+         </tr>
+      </table>
+      <hr>
+
+      % while(my $post_data = $posts_cursor->next) {
+         %= include "pages/include/post", post_data => $post_data
+      % }
+
+      <br clear="left">
+      <hr>
+
+      <br>
+      %= include "pages/include/boardlist"
+      <br>
+   </tr>
+</table>

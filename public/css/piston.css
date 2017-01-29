@@ -1,0 +1,97 @@
+
+
+html, body {
+   background-color: #151515;
+   color: #dcdcdc;
+   background-image: url(/bg.jpg);
+   background-size: cover;
+}
+
+/*
+* { cursor: none; }
+*/
+
+a {
+   color: #808080 !important;
+}
+
+a:visited {
+   color: #808080 !important;
+}
+
+a:hover {
+   color: #ffffff !important;
+}
+
+hr {
+   border-color: white;
+}
+
+.header-links table {
+   
+   background-color: #313131;
+   border-color: white;
+
+   padding: 8px;
+}
+
+.boards-list {
+   background-color: #313131;
+   border-color: white;
+}
+
+.board-logo {
+   color: white;
+}
+
+.replyform table {
+   background: #313131;
+}
+
+.replyform-field {
+   color: white;
+}
+
+.board-rules-admin {
+   color: #ff8e8e;
+}
+
+input:not(.submit-button) {
+   color: white;
+   background-color: #111111;
+}
+
+textarea {
+   color: white;
+   background-color: #111111;
+}
+
+.post {
+   background-color: #313131;
+   border-color: #cccccc;
+}
+
+.post-name {
+   color: white;
+}
+
+.post-mod-buttons a {
+   color: #ff8e8e;
+}
+
+.post-mod-buttons a:hover{
+   color: white;
+}
+
+.post-mod-buttons a:visited{
+   color: #ff8e8e;
+}
+
+.post-file-size {
+   color: white;
+}
+
+.markdown-quote {
+   color: #8b9965;
+}
+

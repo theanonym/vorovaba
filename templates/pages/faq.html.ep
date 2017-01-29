@@ -1,0 +1,92 @@
+% layout "default";
+% title "$config->{board}->{title} :: Справка";
+
+<div class="header">
+   %= include "pages/include/boards_list"
+   %= include "pages/include/header-links"
+</div>
+<div class="clr"></div>
+
+<div class="board-logo">/faq/ - Справка</div>
+<hr>
+
+<div>
+<table class="markdown-table">
+   <tr>
+      <th>Код</th>
+      <th>Альтернативный</th>
+   </tr>
+   <tr>
+      <td rowspan="2"><span class="markdown-quote">&gt;цитата</span></td>
+      <td></td>
+   </tr>
+   <tr>
+      <td><span class="markdown-bold">[b]жирный[/b]</span></td>
+      <td><span class="markdown-bold">**жирный**</span></td>
+   </tr>
+   <tr>
+      <td><span class="markdown-italic">[i]наклонный[/i]</span></td>
+      <td><span class="markdown-italic">*наклонный*</span></td>
+   </tr>
+   <tr>
+      <td><span class="markdown-underlined">[u]подчёркнутый[/u]</span></td>
+      <td><span class="markdown-underlined">__подчёркнутый__</span></td>
+   </tr>
+   <tr>
+      <td><span class="markdown-strike">[s]зачёркнутый[/s]</span></td>
+      <td><span class="markdown-strike">--зачёркнутый--</span></td>
+   </tr>
+   <tr>
+      <td><span class="markdown-spoiler">[spoiler]спойлер[/spoiler]</span></td>
+      <td><span class="markdown-spoiler">%%спойлер%%</span></td>
+   </tr>
+   <tr>
+      <td><pre><code>[code]быдлокод();[/code]</code></pre></td>
+      <td><pre class="c"><code>[code=c]puts("быдлокод")[/code]</code></pre></td>
+   </tr>
+</table>
+</div>
+
+<table class="smilies-table">
+<!--
+   <tr>
+      <th colspan="4">Смайлы</th>
+   </tr>
+-->
+   <caption>Смайлы</caption> <!--caption-side: bottom;,-->
+   <tr>
+      <td>:coolface:, :hitriy:</td>
+      <td><image src="/smilies/coolface.gif"></td>
+   
+      <td>:trollface:</td>
+      <td><image src="/smilies/trollface.gif"></td>
+   </tr>
+   <tr>
+      <td>:coola:</td>
+      <td><image src="/smilies/coola.gif"></td>
+
+      <td>:yoba:, :peka:</td>
+      <td><image src="/smilies/yoba.png"></td>
+   </tr>
+   <tr>
+      <td>:nyan:, :kot:</td>
+      <td><image src="/smilies/nyan.gif"></td>
+   
+      <td>:muha:, :mooha:</td>
+      <td><image src="/smilies/muha.png"></td>
+   </tr>
+   <tr>
+      <td>:sobak:, :pes:</td>
+      <td><image src="/smilies/sobak.gif"></td>
+   
+      <td>:rage:, :zloy:</td>
+      <td><image src="/smilies/rage.png"></td>
+   </tr>
+   <tr>
+      <td>:okay:, :ladno:</td>
+      <td><image src="/smilies/okay.png"></td>
+   
+      <td>:petro:, :shutka:</td>
+      <td><image src="/smilies/petro.png"></td>
+   </tr>
+</table>

@@ -1,0 +1,15 @@
+<div class="post">
+   <div>
+      <span class="post-name"><%= $board_data->{postername} %></span>
+      <span class="post-time"><%= time2str("%d.%m.%Y %H:%M:%S", $post_data->{time}) %></span>
+      %= include "pages/include/post-number"
+
+      %= include "pages/include/modbuttons", board => $board, number => $post_data->{number}
+   </div>
+
+   %= include "pages/include/post-images"
+
+   <blockquote><div class="post-text">
+      <%== $post_data->{data}->{text} %>
+   </div></blockquote>
+</div>

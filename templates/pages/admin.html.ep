@@ -1,0 +1,78 @@
+% layout "default";
+% title "$config->{board}->{title} :: Панель управления";
+
+<div class="header">
+
+</div>
+<div class="clr"></div>
+
+<div class="content">
+   <hr>
+   <form action="/admin" method="post" enctype="multipart/form-data">
+      <input type="hidden" name="action" value="createboard">
+      <h3>Создание/изменение доски</h3>
+      <table>
+         <tr>
+            <td><b>Директория:</b></td>
+            <td><input type="text" name="name" maxlength="10"></td>
+         </tr>
+         <tr>
+            <td><b>Название:</b></td>
+            <td><input type="text" name="title" maxlength="40"></td>
+         </tr>
+         <tr>
+            <td><b>Имя постера:</b></td>
+            <td><input type="text" name="postername" maxlength="10" value="Аноним"></td>
+         </tr>
+         <tr>
+            <td><b>Размер прьевью:</b></td>
+            <td><input type="text" name="thumbsize" value="200" maxlength="3"></td>
+         </tr>
+         <tr>
+            <td><b>Макс. вес:</b></td>
+            <td><input type="text" name="maxsize" value="10485760" maxlength="10"></td>
+         </tr>
+         <tr>
+            <td><b>Типы файлов:</b></td>
+            <td>
+               <label>
+                  <input type="checkbox" name="formats" value="jpg" checked="checked">JPG
+               </label>
+               <label>
+                  <input type="checkbox" name="formats" value="png" checked="checked">PNG
+               </label>
+               <label>
+                  <input type="checkbox" name="formats" value="gif" checked="checked">GIF
+               </label>
+            </td>
+         </tr>
+         <tr>
+            <td><b>Правила:</b></td>
+            <td><textarea name="rules" cols="48" rows="5"><li style="color:#ff0000; font-weight: bold;">Запрещено: вайп, детское порно.</li></textarea></td>
+         </tr>
+         <tr>
+            <td><b>Флаги государств:</b></td>
+            <td><input type="checkbox" name="flags"></td>
+         </tr>
+         <tr>
+            <td colspan="2"><input type="submit" name="submit" value="Создать"></td>
+         </tr>
+      </table>
+   </form>
+   <hr>
+
+   <form action="/admin" method="post" enctype="multipart/form-data">
+      <input type="hidden" name="action" value="deleteboard">
+      <h3>Удаление доски</h3>
+      <table>
+         <tr>
+            <td><b>Директория:</b></td>
+            <td><input type="text" name="name" maxlength="10"></td>
+         </tr>
+         <tr>
+            <td colspan="2"><input type="submit" name="submit" value="Удалить"></td>
+         </tr>
+      </table>
+   </form>
+   <hr>
+</div>

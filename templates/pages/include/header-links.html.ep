@@ -1,0 +1,25 @@
+<div class="header-links">
+   <div>
+      <table>
+      <tr>
+         <td><a href="/">Главная</a></td>
+         <td class="custom-boards-links"><a href="/custom">2.0</a></td>
+         <td><a href="/faq">FAQ</a></td>
+      </tr>
+      </table>
+   </div>
+
+   <div>
+      <select class="switch-style" id="switch-style" onchange="changeStyle();">
+         % for my $style ("Photon", "Piston") {
+            <option value="<%= $style %>"<%= " selected" if $self->cookie("style") eq $style %>><%= $style %></option>
+         % }
+      </select>
+   </div>
+   <!--<div>
+      <form class="header-search" action="/search" method="get">
+         <input type="text" name="query" >
+         <input type="submit" value="Поиск">
+      </form>
+   </div>-->
+</div>

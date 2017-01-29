@@ -1,0 +1,27 @@
+% layout "default";
+% title "$config->{board}->{title}";
+
+<div class="site-logo">
+   <table>
+      <tr>
+         %#<td colspan="3" style="text-align: center;"><img src="/<%= ("logo1.png", "logo2.jpg", "logo_animated.gif")[int rand 3] %>"/></td>
+         <td colspan="3" style="text-align: center;"><img src="/logo1.png"/></td>
+      </tr>
+      <tr>
+         <td colspan="3" style="text-align: center; border-bottom: 1px solid #000; padding-bottom: 2px;">Доски | <a href="/custom">Воровчан 2.0<sup>beta</sup></a> | <a href="/faq">FAQ</a></td>
+      </tr>
+      <tr>
+         <td><a href="/b">/b/ • Братва</a></td>
+         <td><a href="/vg">/vg/ • Видеоигры</a></td>
+         <td><a href="/p">/p/ • Параша</a></td>
+      </tr>
+      <tr>
+         <td><a href="/v">/v/ • О Воровчане</a></td>
+         <td><a href="/s">/s/ • Софт</a></td>
+      </tr>
+      <tr>
+         <td></td>
+         <td><a href="/c">/c/ • Быдлокодинг</a></td>
+      </tr>
+   </table>
+</div>

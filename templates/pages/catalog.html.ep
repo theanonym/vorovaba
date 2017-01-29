@@ -1,0 +1,39 @@
+% layout "default";
+% title "$config->{board}->{title} :: $board_data->{title}";
+
+<div class="header">
+   %= include "pages/include/boards_list"
+   %= include "pages/include/header-links"
+</div>
+
+<div class="clr"></div>
+
+%= include "pages/include/board-logo"
+<hr>
+
+%= include "pages/include/toboard"
+
+<table class="catalog-table">
+   <tr>
+   % my $count = 0;
+   % while(my $oppost_data = $opposts_cursor->next) {
+      % if($count && $count % 10 == 0) {
+         </tr><tr>
+      % }
+      <td>
+         <a href="/<%= $board %>/thread/<%= $oppost_data->{number} %>">
+            % if($oppost_data->{images}) {
+               % my $image = $oppost_data->{images}->[0];
+               <img src="/img/<%= $board %>/thumb/<%= $image->{fname} %>" border="1" width="<%= int $image->{thumb_width} / 2 %>" height="<%= int $image->{thumb_height} / 2 %>" alt="<%= $oppost_data->{number} %>"/>
+            % } else {
+               Нет файла
+            % }
+         </a>
+      </td>
+      % $count++;
+   % }
+   </tr>
+</table>
+<hr>
+
+%#= include "pages/include/engine-link"

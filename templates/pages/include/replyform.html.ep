@@ -1,0 +1,62 @@
+<div class="replyform">
+<form action="/post" enctype="multipart/form-data" method="post" name="replyform">
+   <input name="board" type="hidden" value="<%= $board %>"/>
+   <input name="parent" type="hidden" value="<%= $thread %>"/>
+   <table>
+      <tr>
+         <td class="replyform-field">Капча</td>
+         <td>
+         <label>
+            % if($self->config->{board}->{captcha}) {
+               <input name="captcha" size="1" type="text"/><a onclick="">
+               <a onclick='document.getElementById("captcha").src = "/captcha?new=" + Math.random()'><image src="/captcha" id="captcha" alt="Captcha"/></a>
+            % }
+            <input type="submit" class="submit-button" value="Отправить"/>
+         </label>
+         </td>
+      </tr>
+      <tr>
+         <td class="replyform-field">Текст</td>
+         <td><textarea cols="48" id="text" name="text" rows="6" autofocus></textarea></td>
+      </tr>
+      
+      % if(@{ $board_data->{options}->{formats} }) {
+         % for my $i (1 .. 4) {
+            <tr>
+               <td class="replyform-field">Файл</td>
+               <td><input class="replyform-field" type="file" name="upload" /></td>
+            </tr>
+         % }
+         <tr>
+            <td class="replyform-field">YTB</td>
+            <td>
+            <label style="font-size: 0.9em;">
+               <input name="youtube" size="11" type="text"/>&nbsp;(вместо файла)
+            </label>
+            </td>
+         </tr>
+      % }
+
+      % my($threads, $posts) = $self->count_posts_by_board($board);
+      <tr>
+         <td class="board-rules" colspan="2">
+            <ul>
+               % if($board_data->{options}->{rules}) {
+               <li class="board-rules-admin"><%== $board_data->{options}->{rules} %></li>
+               % }
+               <li>Посмотрите <a href="/faq">правила разметки</a>.</li>
+               % if(@{ $board_data->{options}->{formats} }) {
+                  <li>Разрешённые типы файлов: <%= join ", ", map { uc } @{ $board_data->{options}->{formats} } %>.</li>
+                  <li>Максимальный вес файла: <%= sprintf "%d МБ.", $board_data->{options}->{maxlength} / 1024 / 1024 %></li>
+                  <li>Размер превью картинок до <%= join "x", ($board_data->{options}->{thumbsize}) x 2 %> пикселей.</li>
+               % } else {
+                  <li>Загрузка файлов отключена.</li>
+               % }
+               <li>Сейчас на доске <%= $threads %> тред<%= yoba_posts $threads %> и <%= $posts %> пост<%= yoba_posts $posts %>.</li>
+               <li><span class="board-rules-catalog-ref"><a href="/<%= $board %>/catalog">Каталог тредов</a></span></li>
+            </ul>
+         </td>
+      </tr>
+   </table>
+</form>
+</div>

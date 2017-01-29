@@ -1,0 +1,33 @@
+% layout "empty";
+% title "$config->{board}->{title} :: Создание пользовательской доски";
+
+<div class="content">
+   <form action="/custom/create" method="post">
+      <input type="hidden" name="action" value="create">
+      <h3>Создание доски</h3>
+      <table>
+         <tr>
+            <td><b>Директория:</b></td>
+            <td><input type="text" name="name" maxlength="10"></td><td>(1-10 символов)</td>
+         </tr>
+         <tr>
+            <td><b>Название:</b></td>
+            <td><input type="text" name="title" maxlength="40"></td><td>(1-40 символов)</td>
+         </tr>
+         <tr>
+            <td><b>Имя постера:</b></td>
+            <td><input type="text" name="postername" maxlength="10" value="Аноним"></td><td>(1-10 символов)</td>
+         </tr>
+         <tr>
+            <td><b>Пароль:</b></td>
+            <td><input type="text" name="password" maxlength="40"></td><td>(для управления доской, может быть один для нескольких)</td>
+         </tr>
+
+         %= include "pages/include/captcha"
+
+         <tr>
+            <td colspan="2"><input type="submit" name="submit" value="Создать"></td>
+         </tr>
+      </table>
+   </form>
+</div>

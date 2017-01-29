@@ -1,0 +1,12 @@
+% layout "empty";
+% title "$config->{board}->{title} :: Вход";
+
+<form action="/custom/login" method="post">
+   <table>
+      <tr>
+         <td><b>Пароль:</b></td>
+         <td><input type="text" name="password"></td>
+         <td><input type="submit" name="submit" value="Войти"></td>
+      </tr>
+   </table>
+</form>

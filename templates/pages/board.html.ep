@@ -1,0 +1,49 @@
+% layout "default";
+% title "$config->{board}->{title} :: $board_data->{title}";
+
+% use Yoba;
+
+<div class="header">
+   %= include "pages/include/boards_list"
+   %= include "pages/include/header-links"
+</div>
+<div class="clr"></div>
+
+%= include "pages/include/board-logo"
+<hr>
+
+&#91;<a href="/<%= $board %>/catalog">Каталог</a>&#93;
+% if($custom) {
+   &#91;<span class="custom-boards-links"><a href="/custom/login?board=<%= $board %>">Управление</a></span>&#93;
+% }
+
+%= include "pages/include/replyform"
+<hr>
+
+<div class="threads">
+   % while(my $oppost_data = $opposts_cursor->next) {
+      % my $posts_cursor = $posts_cursors->{$oppost_data->{number}};
+      <div class="thread">
+         %= include "pages/include/oppost", oppost_data => $oppost_data
+
+         % my $omitted = max($oppost_data->{posts_count} - $posts_per_thread, 0);
+         % if($omitted) {
+            <span class="post-omitted">
+               %= sprintf "$omitted сообщени%s пропущено.", yoba_omitted($omitted)
+               Нажмите <a href="/<%= $oppost_data->{board} %>/thread/<%= $oppost_data->{number} %>">здесь</a> для просмотра.
+            </span>
+         % }
+
+         % while(my $post_data = $posts_cursor->next) {
+            %= include "pages/include/post", post_data => $post_data
+         % }
+         <div class="clr"></div>
+      </div>
+      <hr>
+   % }
+</div>
+
+<div class="footer">
+   %= include "pages/include/page-numbers"
+   %#= include "pages/include/engine-link"
+</div>

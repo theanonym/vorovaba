@@ -1,0 +1,30 @@
+% layout "default";
+% title "$config->{board}->{title} :: Вход";
+
+<div class="header">
+   %= include "pages/include/boards_list"
+   %= include "pages/include/header-links"
+</div>
+<div class="clr"></div>
+
+<div class="board-logo">Вход</div>
+<hr>
+
+<label for="password-field">
+<form action="/login" method="post">
+<table class="error-content">
+   <tr>
+      <th class="error-title" colspan="2">Управление</th>
+   </tr>
+   <tr>
+      <td>
+      <label>
+         <!--<span style="font-size: 0.8em;">Пароль</span>-->
+         <input type="password" name="password" id="password-field" autofocus>
+         <input type="submit" name="submit" value="Войти">
+      </label>
+      </td>
+   </tr>
+</table>
+</form>
+</label>

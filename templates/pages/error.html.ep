@@ -1,0 +1,17 @@
+% layout "default";
+% title "$config->{board}->{title} :: Ошибка";
+
+<div class="header">
+   %= include "pages/include/boards_list"
+   %= include "pages/include/header-links"
+</div>
+<div class="clr"></div>
+
+<div class="error-content">
+   <div class="error-title">Ошибка</div>
+   <div class="error-message"><%== $message %></div>
+% no strict;
+% if($previous_page) {
+   <div class="error-goback">&#91;<a href="<%= $previous_page %>">Назад</a>&#93;</div>
+%}
+</div>

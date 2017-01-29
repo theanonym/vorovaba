@@ -1,0 +1,12 @@
+<span class="post-number" id="<%= $post_data->{number} %>">
+   % if($thread) {
+      % # Оппост в треде / пост в треде
+      <a href="/<%= $post_data->{board} %>/thread/<%= $thread %>#<%= $post_data->{number} %>" onclick='insertToPostform(">><%= $post_data->{number} %>\n"); return false'>№<%= $post_data->{number} %></a>&nbsp;
+   % } elsif(!$post_data->{parent}) {
+      %# Оппост на доске
+      <a href="/<%= $post_data->{board} %>/thread/<%= $post_data->{number} %>#<%= $post_data->{number} %>"><%= "№$post_data->{number}" %></a>
+   % } else {
+      % # Пост на доске
+      <a href="/<%= $post_data->{board} %>/thread/<%= $post_data->{parent} %>#<%= $post_data->{number} %>"><%= "№$post_data->{number}" %></a>
+   % }
+</span>

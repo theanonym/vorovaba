@@ -1,0 +1,14 @@
+% if($self->session("admin_password")) {
+   <span class="post-mod-buttons">
+      &#91;<a href="<%= "/mod?action=delete&board=$board&post=$number" %>" title="Удалить пост">D</a>
+      <a href="<%= "/mod?action=delete_and_ban&board=$board&post=$number" %>" title="Удалить пост и пидорнуть автора">&amp;</a>
+      <a href="<%= "/mod?action=ban&board=$board&post=$number" %>" title="Пидорнуть автора">B</a>
+      <a href="<%= "/mod?action=delete_all_and_ban&board=$board&post=$number" %>" title="Удалить все посты автра и пидорнуть его">&amp;</a>
+      <a href="<%= "/mod?action=delete_all&board=$board&post=$number" %>" title="Удалить все посты автора">DA</a>&#93;
+   </span>
+% } elsif($custom) {
+   <span class="post-mod-buttons">
+      &#91;<a class="href="<%= "/modmod?action=delete&board=$board&post=$number" %>" title="Удалить пост">D</a>
+      <a href="<%= "/modmod?action=delete_all&board=$board&post=$number" %>" title="Удалить все посты автора">DA</a>&#93;
+   </span>
+% }

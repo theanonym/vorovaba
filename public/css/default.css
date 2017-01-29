@@ -1,0 +1,460 @@
+* {
+   padding: 0;
+   margin: 0;
+}
+
+html{
+
+}
+
+html,
+body {
+   margin:0;
+   padding:0;
+   height:100%;
+}
+
+.header {
+   margin: 10px 5px 0 5px;
+}
+
+.header-links {
+   float: right;
+}
+
+.header-links select {
+   float: right;
+   margin-top: 2px;
+}
+
+.header-links table {
+
+   background-color: #e4e4e4;
+   border: 1px solid #949494;
+   border-radius: 3px;
+
+   padding: 8px;
+   
+}
+
+
+.header-links td {
+
+   padding-left: 5px;
+}
+
+.header-links td:first-child {
+   border-left: none;
+
+   padding-left: 0;
+}
+
+.header-search {
+   margin-top: 2px;
+   text-align: left;
+}
+
+.boards-list {
+   float: left;
+   clear: both;
+
+   background-color: #e4e4e4;
+   border: 1px solid #949494;
+   border-radius: 3px;
+}
+
+.boards-list table {
+
+
+
+}
+
+.boards-list td {
+
+   text-align: center;
+
+   padding: 0 4px;
+}
+
+.board-logo {
+   text-align: center;
+   font-size: 2.5em;
+   font-weight: bold;
+   color: #ff6600;
+   margin-bottom: 5px;
+}
+
+.footer {
+   margin-top: 20px;
+}
+
+.page-numbers {
+   margin-bottom: 10px;
+}
+
+.engine-link {
+   font-family: Verdana;
+   font-size: 0.9em;
+   color: #004a99;
+   text-align: center;
+   clear: both;
+   margin-bottom: 5px;
+}
+
+.replyform {
+   text-align: center;
+   padding: 30px 0;
+}
+
+.replyform table {
+   margin: 0px auto;
+   text-align: left;
+
+   background-color: #e4e4e4;
+   border: 2px solid #949494;
+   border-radius: 5px;
+   
+   padding: 10px 25px;
+}
+
+.replyform-field {
+   background:transparent;
+   color:#002244;
+   font-weight:bold;
+   text-align: center;
+}
+
+img#captcha {
+   vertical-align: middle;
+   height: 20px;
+}
+
+.submit-button {
+   margin-bottom: 2px;
+}
+
+.board-rules {
+   font-size: 0.75em;
+   list-style-type: square;
+}
+
+.board-rules ul {
+   list-style-type: square;
+}
+
+.board-rules-admin {
+   font-weight: bold;
+   color: #ff0000;
+}
+
+.board-rules-catalog-ref {
+   font-weight: bold;
+}
+
+.catalog-table {
+   padding: 20px 10px;
+   margin: 0 auto;
+}
+
+.thread {
+   margin-left: 10px;
+   margin-right: 10px;
+   margin-bottom: 15px;
+   margin-top: 10px;
+}
+
+.oppost {
+   float: left; /* переместить текст вниз под картинки */
+}
+
+.post-omitted {
+   font-size: 0.9em;
+   color: #666666;
+
+   float: left;
+   clear: left;
+}
+
+.post-text {
+   margin-top: 5px;
+   margin-bottom: 5px;
+}
+
+
+.post-images {
+   float: left;
+}
+
+.post-file-size {
+   color: #666666;
+   font-size: .65em;
+}
+
+.post-file-size a {
+   text-decoration: underline;
+}
+
+.post-file-size a:hover{
+   text-decoration: underline;
+}
+
+.post-image {
+   border: none;
+   vertical-align: top;
+   padding-top: 2px;
+   padding-right: 4px;
+}
+
+.thread-return {
+   margin-top: 5px;
+   margin-bottom: 15px;
+}
+
+.clr {
+   clear: both;
+}
+
+body {
+   background: #eeeeee;
+   font-family: "Trebuchet MS", Trebuchet, serif;
+   padding: 8px;
+}
+
+.post {
+   background: #dddddd;
+   border: solid 1px #cccccc;
+   border-radius: 5px;
+
+   padding: 2px 10px 5px 10px;
+   margin-top: 6px;
+
+   float: left;
+   clear: both;
+}
+
+.post-name {
+   color: #004a99;
+   font-weight: bold;
+}
+
+.post-time {
+   font-size: 0.9em;
+}
+
+.post-number {
+   font-size: 0.9em;
+   font-weight: bold;
+}
+
+.post-mod-buttons {
+   font-size: 0.8em;
+}
+
+.post-mod-buttons a {
+   color: #ff0000;
+}
+
+.post-mod-buttons a:hover{
+   color: #0066ff;
+}
+
+.post-mod-buttons a:visited{
+   color: #ff0000;
+}
+
+.custom-boards-links a {
+   color: #42b829;
+}
+
+.custom-boards-links a:hover{
+
+}
+
+.custom-boards-links a:visited{
+   color: #42b829;
+}
+
+
+a {
+   color: #ff6600;
+   text-decoration: none;
+}
+
+a:visited {
+   color: #ff6600;
+}
+
+a:hover {
+   color: #0066ff;
+   text-decoration: underline;
+}
+
+hr {
+/*
+   border: solid 1px #bbbbbb;
+*/
+   border-style: solid none none none;
+   border-width: 1px;
+   border-color: #BBBBBB;
+}
+
+
+.thumb {
+
+}
+
+
+.br-left {
+   clear: both;
+}
+
+.markdown-quote {
+   color: #789922;
+}
+
+.markdown-bold {
+   font-weight: bold;
+}
+
+.markdown-italic {
+   font-style: italic;
+}
+
+.markdown-spoiler {
+   background: #000000;
+}
+
+.markdown-spoiler:hover {
+   background: inherit;
+}
+
+.markdown-strike {
+   text-decoration: line-through;
+}
+
+.markdown-underlined {
+   border-bottom: 1px dotted;
+}
+
+.markdown-table {
+   border: 1px dotted;
+      
+   float: left;
+   margin-top: 15px;
+   margin-left: 50px;
+
+   /* */
+    border-collapse: collapse;
+    border-spacing: 15px;  
+}
+
+.markdown-table td {
+   border: 1px dotted;
+   padding: 5px 10px;
+}
+
+.markdown-table th {
+/*
+   font-size: 1.1em;
+*/
+   border: 1px solid;
+   padding: 1px;
+}
+
+.smilies-table {
+   border: 1px dotted;
+   float: right;
+   margin-top: 15px;
+   margin-right: 50px;
+}
+
+.smilies-table td {
+   border: 1px dotted;
+   padding: 2px 2px;
+   text-align: center;
+}
+
+.smilies-table th {
+   font-size: 1.1em;
+   border: 1px solid;
+   padding: 1px;
+}
+
+.custom-boards-table {
+   border: 1px dotted;
+
+   margin: 0 auto;
+   margin-top: 15px;
+
+   /*border-collapse: collapse; убрать внешний бордер*/ 
+}
+
+.custom-boards-table td {
+   border: 1px dotted;
+
+
+   padding: 2px 4px;
+
+
+   text-align: center;
+}
+
+.custom-boards-table th {
+   font-size: 1.1em;
+   padding: 1px;
+}
+
+.custrom-boards-table-board-title {
+   padding: 0 10px;
+}
+
+.custrom-boards-table-posts {
+   
+}
+
+.content {
+   border: 1px solid #ff0000;
+   display: block;
+   overflow: hidden;
+
+}
+
+.site-logo {
+   display: table;
+   margin: 0 auto;
+   padding-top: 40px;
+}
+
+.site-logo a {
+   text-decoration: none;
+}
+
+.error-content {
+   text-align: center;
+
+   margin: 100px auto;
+   
+   background-color: #e4e4e4;
+   border: 1px solid #949494;
+   border-bottom-left-radius: 15px;
+   border-bottom-right-radius: 15px;
+   border-top-left-radius: 15px;
+   border-top-right-radius: 15px;
+   
+   padding: 20px;
+}
+
+.error-title {
+   font-size: 3em;
+   font-weight: bold;
+   color: #ff6600;
+}
+
+.error-message {
+   font-size: 1.5em;
+}
+
+.error-goback {
+   font-size: 1.5em;
+   margin-top: 10px;
+}

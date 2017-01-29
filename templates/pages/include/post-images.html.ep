@@ -1,0 +1,21 @@
+% if($post_data->{images} && @{ $post_data->{images} }) {
+   <table class="post-images">
+   <tr>
+   % for my $image (@{ $post_data->{images} }) {
+      <td class="post-file-size">
+         <!--&#91;<a class="gimages-link" href="http://www.google.ru/searchbyimage?image_url=http://vorovchan.ru/img/<%=$post_data->{board} %>/<%= $image->{fname} %>">G</a>&#93;-->
+         <a href="/img/<%= $post_data->{board} %>/<%= $image->{fname} %>"><%= $image->{fname} %></a>&nbsp;<%= sprintf "(%.2fМБ, %dx%d)", $image->{size} / 1024 / 1024, $image->{width}, $image->{height} %>
+      </td>
+   % }
+   </tr>
+
+   <tr>
+   % my $i = 0;
+   % for my $image (@{ $post_data->{images} }) { $i++;
+      <td class="post-image" id="image-<%= $post_data->{number} %>-<%= $i %>">
+         <a href="/img/<%= $post_data->{board} %>/<%= $image->{fname} %>" onclick='expandImage(<%= $post_data->{number} %>, <%= $i %>, "/img/<%= $post_data->{board} %>/<%= $image->{fname} %>", "/img/<%= $post_data->{board} %>/thumb/<%= $image->{fname} %>", <%= $image->{width} %>, <%= $image->{height} %>, <%= $image->{thumb_width} %>, <%= $image->{thumb_height} %>); return false'><img alt="<%= $post_data->{number} %>" src="/img/<%= $post_data->{board} %>/thumb/<%= $image->{fname} %>" /></a>
+      </td>
+   % }
+   </tr>
+   </table>
+% }

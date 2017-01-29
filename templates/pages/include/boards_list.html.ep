@@ -1,0 +1,27 @@
+<!--
+% use vars qw/$boards_list/;
+-->
+
+<!--
+% if($boards_list) {
+-->
+   <div class="boards-list">
+      <table>
+      <tr>
+      % map {
+         <td><a title="<%= $_->[1] %>" href="/<%= $_->[0] %>"><%= $_->[0] %></a></td>
+      % } sort { $a->[0] cmp $b->[0] } grep { $_->[0] !~ /^_/ } @$boards_list;
+      </tr>
+      </table>
+
+      <table>
+      <tr>
+      % map {
+         <td class="custom-boards-links"><a title="<%= $_->[1] %>" href="/<%= $_->[0] %>"><%= substr $_->[0], 1 %></a></td>
+      % } sort { $a->[0] cmp $b->[0] } grep { length $_->[1] && $_->[0] ~~ /^_/ } @$boards_list;
+      </tr>
+      </table>
+   </div>
+<!--
+% }
+-->

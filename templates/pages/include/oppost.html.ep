@@ -1,0 +1,20 @@
+<div class="oppost">
+   <div>
+      <span class="post-name"><%= $board_data->{postername} %></span>
+      <span class="post-time"><%= time2str("%d.%m.%Y %H:%M:%S", $oppost_data->{time}) %></span>
+      %= include "pages/include/post-number", post_data => $oppost_data
+      %= include "pages/include/modbuttons", board => $board, number => $oppost_data->{number}
+
+      % unless($thread) {
+         &#91;<a href="<%= "/$oppost_data->{board}/thread/$oppost_data->{number}" %>">Ответ</a>&#93;
+      % }
+   </div>
+   
+   %= include "pages/include/post-images", post_data => $oppost_data
+
+   <blockquote><span class="post-text">
+      <%== $oppost_data->{data}->{text} %>
+   </span></blockquote>
+
+   %#<div style="clear: left;"></div>
+</div>

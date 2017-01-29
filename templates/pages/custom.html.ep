@@ -1,0 +1,48 @@
+% layout "default";
+% title "$config->{board}->{title} 2.0";
+
+<div class="header">
+   %= include "pages/include/boards_list"
+   %= include "pages/include/header-links"
+</div>
+<div class="clr"></div>
+
+<div class="board-logo">Пользовательские разделы</div>
+<hr>
+
+
+<div>
+   &#91;<a href="/custom/create">Создать доску</a>&#93;
+   &#91;<a href="/custom/login">Управление</a>&#93;
+</div>
+
+
+<div>
+<table class="custom-boards-table">
+   <tr>
+      <th>Название</th>
+      <th>Постов</th>
+   </tr>
+   % for(1 .. 20) {
+      % my $name = int 100 + rand(9999);
+      % my $title = int 100000 + rand(9999999999);
+      <tr>
+         <td class="custrom-boards-table-board-title"><a href="/<%= $name %>"><%= substr($name, 1) %></a> - <%= $title %></td>
+         <td>
+            <span style="color:#007f00"><%= int rand(1000000000000) %></span>
+         </td>
+      </tr>
+   % }
+</table>
+</div>
+
+%#   % for my $b (sort { $postcount->{$b->[0]} <=> $postcount->{$a->[0]} } grep { $_->[0] =~ /^_/ } @$boards_list) {
+%#      % my($name, $title) = @$b;
+%#      <tr>
+%#         <td>
+%#            <a href="/<%= $name %>"><%= substr($name, 1) %></a> - <%= $title %>
+%#         </td>
+%#         <td>
+%#            &#91;<span style="color:#007f00"><%= $postcount->{$name} %></span>&#93;
+%#         </td>
+%#      </tr>
